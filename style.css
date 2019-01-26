@@ -1,0 +1,35 @@
+@font-face {
+    font-family: "San Francisco Thin";
+    font-style: normal;
+    font-weight: bold;
+    src: url('./fonts/SF-Pro-Display-Thin.otf') format("opentype");
+}
+
+@font-face {
+    font-family: "San Francisco Regular";
+    font-style: normal;
+    font-weight: bold;
+    src: url('./fonts/SF-Pro-Display-Regular.otf') format("opentype");
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 160px;
+}
+.title-domain {
+    margin: 0;
+    text-transform: uppercase;
+    font-family: "San Francisco Thin"
+}
+.text-default {
+    font-size: 20px;
+    font-family: 'San Francisco Regular'
+}
+canvas {
+    width: 150px !important;
+    height: 150px !important;
+}
