@@ -5,8 +5,8 @@ require('electron-debug')();
 let tray = undefined
 let window = undefined
 let iconSize = {
-  width: 20,
-  height: 20
+  width: 15,
+  height: 15
 } 
 
 // Don't show the app in the doc
@@ -16,26 +16,11 @@ app.on('ready', () => {
   createTray()
   createWindow()
   Menu.setApplicationMenu(menu)
-
-  window.on('show', () => {
-    let iconPath = systemPreferences.isDarkMode() ? path.join(__dirname, 'logo.png') : path.join(__dirname, 'logo.png');
-    let trayIcon = nativeImage.createFromPath(iconPath);
-    trayIcon = trayIcon.resize(iconSize);
-    tray.setImage(trayIcon);
-    tray.setHighlightMode('always')
-  })
-  window.on('hide', () => {
-    let iconPath = systemPreferences.isDarkMode() ? path.join(__dirname, 'logo.png') : path.join(__dirname, 'logo.png');
-    let trayIcon = nativeImage.createFromPath(iconPath);
-    trayIcon = trayIcon.resize(iconSize);
-    tray.setImage(trayIcon);
-    tray.setHighlightMode('never')
-  })
 })
 
 
 const createTray = () => {
-  const iconPath = systemPreferences.isDarkMode() ? path.join(__dirname, 'logo.png') : path.join(__dirname, 'logo.png');
+  const iconPath = systemPreferences.isDarkMode() ? path.join(__dirname, 'light.png') : path.join(__dirname, 'dark.png');
   let trayIcon = nativeImage.createFromPath(iconPath);
   trayIcon = trayIcon.resize(iconSize);
   tray = new Tray(trayIcon)
