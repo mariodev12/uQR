@@ -33,3 +33,8 @@ canvas {
     width: 150px !important;
     height: 150px !important;
 }
+
+
+html {
+    background-color: #ddd;
+} 
